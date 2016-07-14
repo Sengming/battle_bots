@@ -152,9 +152,13 @@
     <ClInclude Include="CustomBot.hpp" />
     <ClInclude Include="Defender.hpp" />
     <ClInclude Include="Defines.hpp" />
+    <ClInclude Include="IArena.h" />
+    <ClInclude Include="IRobotFactoryInterface.hpp" />
     <ClInclude Include="Robot.hpp" />
     <ClInclude Include="RobotFactory.hpp" />
+    <ClInclude Include="RobotList.hpp" />
     <ClInclude Include="Scout.hpp" />
+    <ClInclude Include="Sniper.hpp" />
     <ClInclude Include="Soldier.hpp" />
     <ClInclude Include="Warrior.hpp" />
     <ClInclude Include="Weapon.hpp" />
@@ -168,7 +172,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="RobotFactory.cpp" />
+    <ClCompile Include="RobotList.cpp" />
     <ClCompile Include="Scout.cpp" />
+    <ClCompile Include="Sniper.cpp" />
     <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Warrior.cpp" />
     <ClCompile Include="Weapon.cpp" />

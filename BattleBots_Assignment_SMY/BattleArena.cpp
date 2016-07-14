@@ -36,7 +36,7 @@ void BattleArena::BuildTeam1()
 		uint32_t m_numberofrobots = 0;
 		cin >> *m_robotChoice;
 
-		v_team1.push_back(RobotFactory::newRobot(m_robotChoice));
+		v_team1.push_back(CRobotFactory::newRobot(m_robotChoice));
 		//v_team1->at(m_numberofrobots).e_robotType = 1;
 		break;
 		

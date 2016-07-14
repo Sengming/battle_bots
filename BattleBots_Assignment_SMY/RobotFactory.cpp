@@ -1,49 +1,17 @@
 #include "RobotFactory.hpp"
 
 
-RobotFactory::RobotFactory()
+CRobotFactory::CRobotFactory()
 {
+	// Do nothing
 }
 
-RobotFactory::~RobotFactory()
+CRobotFactory::~CRobotFactory()
 {
+	// Do nothing
 }
 
-Robot* RobotFactory::newRobot(uint32_t *choice)
-{
-
-	if (*choice == 1)
-	{
-		Scout *p_tempScout= new Scout;
-		p_tempScout->setRobotType(Scout_e);
-		return p_tempScout;
-	}
-	if (*choice == 2)
-	{
-		Defender *p_tempDefender = new Defender;
-		p_tempDefender->setRobotType(Defender_e);
-		return p_tempDefender;
-	}
-	if (*choice == 3)
-	{
-		Warrior *p_tempWarrior = new Warrior;
-		p_tempWarrior->setRobotType(Warrior_e);
-		return p_tempWarrior;
-	}
-	if (*choice == 4)
-	{ 
-		CustomBot *p_tempCustomBot = assembleRobot();
-
-		p_tempCustomBot->setRobotType(Custom_e);
-		return p_tempCustomBot;
-
-	
-	}
-		//TODO
-	return NULL;
-}
-
-CustomBot* RobotFactory::assembleRobot()
+CustomBot* CRobotFactory::assembleRobot()
 {
 	CustomBot* tempRobot = new CustomBot;
 	uint32_t tempArmor;
@@ -60,7 +28,7 @@ CustomBot* RobotFactory::assembleRobot()
 
 	cin >> tempArmor;
 	*armor = static_cast<ArmorType> (tempArmor);
-	tempRobot ->setArmor(armor);
+	tempRobot->setArmor(armor);
 
 
 	cout << "Choose your weapon type:" << dendl;
@@ -75,8 +43,71 @@ CustomBot* RobotFactory::assembleRobot()
 	*weapon = static_cast <WeaponType> (tempWeapon);
 	tempRobot->setWeapon(weapon);
 
-
-
-
+	return tempRobot;
 }
+
+
+//Robot* CRobotFactory::newRobot(robotType *choice)
+//{
+//	switch (*choice)
+//	{
+//	case Scout_e:
+//		Scout *p_tempScout = new Scout;
+//		p_tempScout->setRobotType(Scout_e);
+//		return p_tempScout;
+//		break;
+//	case Defender_e:
+//		Defender *p_tempDefender = new Defender;
+//		p_tempDefender->setRobotType(Defender_e);
+//		return p_tempDefender;
+//		break;
+//	case Warrior_e:
+//		Warrior *p_tempWarrior = new Warrior;
+//		p_tempWarrior->setRobotType(Warrior_e);
+//		return p_tempWarrior;
+//		break;
+//	case Custom_e:
+//		CustomBot *p_tempCustomBot = assembleRobot();
+//		p_tempCustomBot->setRobotType(Custom_e);
+//		return p_tempCustomBot; 
+//		break;
+//		
+//	}
+//		//TODO
+//	return NULL;
+//}
+
+Robot* CRobotFactory::createScout()
+{
+	return dynamic_cast<Robot*>(new Scout());
+}
+
+Robot* CRobotFactory::createWarrior()
+{
+	return dynamic_cast<Robot*>(new Warrior());
+}
+
+Robot* CRobotFactory::createSoldier()
+{
+	return dynamic_cast<Robot*>(new Soldier());
+}
+
+Robot* CRobotFactory::createSniper()
+{
+	return dynamic_cast<Robot*>(new Sniper());
+}
+
+Robot* CRobotFactory::createDefender()
+{
+	return dynamic_cast<Robot*> (new Defender());
+}
+
+Robot* CRobotFactory::createCustom()
+{
+	return dynamic_cast<Robot*>(assembleRobot());
+}
+
+//To extend and add new bots, simply add new create methods.
+
+
 

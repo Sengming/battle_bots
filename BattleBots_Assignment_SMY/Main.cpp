@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <typeinfo>
 #include "Defines.hpp"
 
 using namespace std;

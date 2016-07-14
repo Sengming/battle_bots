@@ -16,8 +16,6 @@ Robot::~Robot()
 uint32_t Robot::RecieveFire()
 {
 
-
-	return 0;
 }
 
 uint32_t Robot::SendFire()
@@ -61,6 +59,26 @@ void Robot::SPecialAttack()
 
 }
 
+std::string Robot::getRobotName() const
+{
+	return m_robotName;
+}
+
+void Robot::setRobotName(std::string robotName)
+{
+	m_robotName = robotName;
+}
+
+uint32_t Robot::getRobotNumber() const
+{
+	return m_robotNumber;
+}
+
+void Robot::setRobotNumber(uint32_t robotNumber)
+{
+	m_robotNumber = robotNumber;
+}
+
 void Robot::setPositioninBattle()
 {
 
@@ -72,6 +90,16 @@ void Robot::getPositionfromBattle() const
 
 	//TODO
 
+}
+
+Robot* Robot::getNextRobotInList() const
+{
+	return m_nextRobot;
+}
+
+void Robot::setNextRobotInList(Robot* nextRob)
+{
+	m_nextRobot = nextRob;
 }
 
 void Robot::setRobotType(robotType type)

@@ -37,7 +37,8 @@ enum WeaponType
 
 };
 
-enum robotType {
+enum robotType 
+{
 	null = 0,
 	Scout_e = 1,
 	Defender_e = 2,
