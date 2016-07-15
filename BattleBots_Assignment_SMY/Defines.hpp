@@ -48,5 +48,28 @@ enum robotType
 
 };
 
+typedef enum robotStates
+{
+	createbots = 0,
+	team1turn,
+	team2turn,
+	endgame
+}robotStates_e;
+
+typedef enum createBotSubstates
+{
+	customBot = 0,
+	normalBot
+}createBotSubstates_e;
+
+typedef enum teamTurn
+{
+	selectRobot = 0,
+	surrender,
+	move,
+	attack,
+	special_move
+}teamTurnSubstates_e;
+
 
 #endif

@@ -153,6 +153,7 @@
     <ClInclude Include="Defender.hpp" />
     <ClInclude Include="Defines.hpp" />
     <ClInclude Include="IArena.h" />
+    <ClInclude Include="IArmor.hpp" />
     <ClInclude Include="IRobotFactoryInterface.hpp" />
     <ClInclude Include="Robot.hpp" />
     <ClInclude Include="RobotFactory.hpp" />
